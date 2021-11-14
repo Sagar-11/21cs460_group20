@@ -1,42 +1,150 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-</head>
-<body>
-<h2 id="project-proposal">Project Proposal</h2>
-<h1 id="machine-translation-under-atypical-use.">Machine translation under atypical use.</h1>
-<p>Machine translation is the process of converting a text from a source language to target language by the use of machine learning algorithms The inherent complexity of language means that having a rule based approach to solve the problem would be tedious and inefficient, hence the need for machine learning based algorithms. Neural Machine learning methods have found use in modelling the ambiguity and flexibility of h human language, but they lack predictability and are trained on corpora based on 'formal use' and perform poorly on text 'in the wild'. Hence in this project we will try to build methods/models that are trained on standard corpora but also perform well on distributionally shfited database i.e. text with the use of profanities, punctuation errors, grammatical mistakes, slangs etc.</p>
+<html><head><style>body {
+   color: black;
+}
+</style></head><body><h1 id="project-proposal">Project  Proposal</h1>
+<h1 id="machine-translation-under-atypical-use-">Machine translation under atypical use.</h1>
+<p>Machine translation is the process of converting a text from a source language to target language by the use of machine learning algorithms.
+The inherent complexity of language means that having a rule based approach to solve the problem would be tedious and inefficient, hence
+the need for machine learning/Neural networks based algorithms arises. Neural Machine learning methods have found use in modelling the ambiguity and flexibility of
+human language, but they still lack predictability and are trained on corpora based on &#39;formal use&#39; and perform poorly on text &#39;in the wild&#39;.
+Hence in this project we will try to build methods/models that are trained on standard corpora but also perform well on distributionally shifted
+database i.e. text with the use of profanities, punctuation errors, grammatical mistakes, slangs etc.</p>
 <h1 id="dataset">Dataset</h1>
-<p>For the training we will use standard dataset like the WMT’20 English-Russian corpus, English-Russian Newstest’19 and the corpus of news data collected from GlobalVoices News service. The text in these is mostly used formally. To check our evaluation on shifted dataset we will use Reddit corpus prepared for the WMT’19 robustness challenge. These dataset is annotated by expert human translators and supplied by the shifts challenge team (NeurIPS 2021). This dataset is tagged with the following anomalies:- Punctuation anomalies, Capitalisation anomalies, Fluency anomalies, Slang anomalies, Emoji anomalies and Tags anomalies. The method of evaluation for the robustness and uncertainty in the prediction will be through area under error - retention curves.</p>
-<h1 id="previous-methods-and-baselines.">Previous methods and baselines.</h1>
-<p>For the baseline we use an ensemble of 3 transformers-big models trained on the WMT'20 En-Ru Corpus. Some of the previous of robust models have been done of small scale image classification problems but not on multi - modal problems like translation where multiple correct sentences are possible for one input sentence. Such approaches have been extended to structures prediction tasks like ours. They can be characterised by Ensemble and sampling based, Prior networks and temperature scaling.</p>
-<h1 id="our-approach-and-schedule.">Our approach and Schedule.</h1>
-<p>Upto midway: Do statistical analysis on the dataset, try existing ensemble based methods and existing techniques on robust learning. After midway: Try to include ELMO word embeddings, implement a paper on max-min robust optimisation, assessment and optimisation of the models. Our objective will be to improve baseline performance, try to come with additional measure for uncertainity determination and get to the evaluation leaderboards.</p>
+<p>For the training we will use standard dataset like the WMT’20 English-Russian corpus, English-Russian Newstest’19 and the
+corpus of news data collected from GlobalVoices News service. The text in these is mostly used formally. To check our evaluation on shifted dataset
+we will use Reddit corpus prepared for the WMT’19 robustness challenge. These dataset is annotated by expert human translators and supplied by the shifts challenge team (NeurIPS 2021).
+This dataset is tagged with the following anomalies:-
+Punctuation anomalies, Capitalisation anomalies, Fluency anomalies, Slang anomalies, Emoji anomalies and Tags anomalies.
+The method of evaluation for the robustness and uncertainty in the prediction will be through area under error - retention curves.</p>
+<h1 id="previous-methods-and-baselines-">Previous methods and baselines.</h1>
+<p>For the baseline we use an ensemble of 3 transformers-big models trained on the WMT&#39;20 En-Ru Corpus. Some of the previous works on robust models have been done of small scale image classification
+problems but not on multi - modal problems like translation where multiple correct sentences are possible for one input sentence.
+Such approaches have been extended to structured prediction tasks like ours. They can be characterised by Ensemble and sampling based, Prior networks
+and temperature scaling.</p>
+<h1 id="our-approach-and-schedule-">Our approach and Schedule.</h1>
+<p>Upto midway: Do statistical analysis on the dataset, try existing ensemble based methods and existing techniques on robust learning.
+After midway: Try to include ELMO word embeddings, implement a paper on max-min robust optimisation, assessment and optimisation of the models.
+Our objective will be to improve baseline performance, try to come with additional measure for uncertainty determination and get to the evaluation leaderboards.</p>
 <h1 id="relevant-papers">Relevant Papers</h1>
-<ol style="list-style-type: decimal">
-<li>Wang, Y., Wu, L., Xia, Y., Qin, T., Zhai, C., &amp; Liu, T.-Y. (2020). Transductive Ensemble Learning for Neural Machine Translation. Proceedings of the AAAI Conference on Artificial Intelligence, 34(04), 6291-6298.</li>
+<ol>
+<li>Wang, Y., Wu, L., Xia, Y., Qin, T., Zhai, C., &amp; Liu, T.-Y. (2020). Transductive Ensemble Learning for Neural Machine Translation.
+Proceedings of the AAAI Conference on Artificial Intelligence, 34(04), 6291-6298.</li>
 <li>Paul Michel, Tatsunori B. Hashimoto, &amp; Graham Neubig (2021). Modeling the Second Player in Distributionally Robust Optimization. ArXiv, abs/2103.10282.</li>
 <li>Peters, M., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K., &amp; Zettlemoyer, L. (2018). Deep contextualized word representations. In Proc. of NAACL.</li>
-<li>Malinin, A., Band, N., Ganshin, Chesnokov, G., Gal, Gales, M., Noskov, A., Ploskonosov, A., Prokhorenkova, L., Provilkov, I., Raina, V., Raina, V., Roginskiy, D., Shmatova, M., Tigar, P., &amp; Yangel, B. (2021). Shifts: A Dataset of Real Distributional Shift Across Multiple Large-Scale Tasks. arXiv preprint arXiv:2107.07455.</li>
+<li>Malinin, A., Band, N., Ganshin, Chesnokov, G., Gal, Gales, M., Noskov, A., Ploskonosov, A., Prokhorenkova, L., Provilkov, I., Raina, V., Raina, V., Roginskiy,
+D., Shmatova, M., Tigar, P., &amp; Yangel, B. (2021). Shifts: A Dataset of Real Distributional Shift Across Multiple Large-Scale Tasks. arXiv preprint arXiv:2107.07455.</li>
 </ol>
-
-<h2 id="project-midway">Project Midway</h2>
-<h1 id="summary-of-relevant-papers">Summary of Relevant Papers</h1>
+<h1 id="project-final">Project Final</h1>
+<h1 id="-synopsis-of-papers-"><em>Synopsis of papers</em></h1>
+<hr>
+<p>Upon reading of the papers only few were found to be useful in our use case.</p>
+<h2 id="1-malinin-a-band-n-ganshin-chesnokov-g-gal-gales-m-noskov-a-ploskonosov-a-prokhorenkova-l-provilkov-i-raina-v-raina-v-roginskiy-d-shmatova-m-tigar-p-yangel-b-2021-shifts-a-dataset-of-real-distributional-shift-across-multiple-large-scale-tasks-arxiv-preprint-arxiv-2107-07455-">1. Malinin, A., Band, N., Ganshin, Chesnokov, G., Gal, Gales, M., Noskov, A., Ploskonosov, A., Prokhorenkova, L., Provilkov, I., Raina, V., Raina, V., Roginskiy, D., Shmatova, M., Tigar, P., &amp; Yangel, B. (2021). Shifts: A Dataset of Real Distributional Shift Across Multiple Large-Scale Tasks. arXiv preprint arXiv:2107.07455 .</h2>
+<hr>
+<ul>
+<li>Recall: We want models that are robust to distributional shifts i.e they perform well on data &#39;in the wild&#39; which could be very different than our training data</li>
+<li>Additionally we want it to give reliable uncertainty estimates on its prediction so we know when to trust it.</li>
+<li>Datasets: WMT&#39;20en-ru, Newstest&#39;19, WMT&#39;19 MTNT reddit, Global voices, Shifts reddit. The authors provide the shifted dataset for exactly this purposes.</li>
+<li>For predictive performance standard metrics can be used: BLEU, eGLEU,maxGLEU.</li>
+<li>The expected GlEU across multiple hypothesis is given by :-*
+$$ eGLEU = \frac{1}{N}\sum<em>{i=1}^{N}\sum</em>{h=1}^{H}GLEU<em>{i,h}.w</em>{i,h}$$ , $$
+\sum_{h=1}^{H}w<em>h = 1
+$$
+while,
+$$maxGLEU = \frac{1}{N}\sum</em>{i=1}^{N}max<em>h[GLEU</em>{i,h}]$$</li>
+<li>For the quality of uncertainty estimates we can use discriminatory power between &#39;in-domain&#39; and &#39;out-domain&#39; using AUPR and AUROC but not a good idea.</li>
+<li>Instead authors propose area under error retention curves for joint estimates.</li>
+<li>Authors have used an ensemble of transformer-big trained using a fork of fairseq(library for implementing many seq to seq models in pytorch). They have used uncertainty estimates from a referenced paper (both transformer model and uncertainty estimates discussed below)</li>
+<li>The joint assessment of the authors baseline score is noted below*
+|Data    | R-AUC   | F1-AUC  | ROC-AUC  |
+|--------|---------|---------|----------|
+| dev    |33.22±0.48| 0.428±0.003| 68.9±0.28|</li>
+</ul>
+<h2 id="-2-vaswani-a-shazeer-n-parmar-n-uszkoreit-j-jones-l-gomez-a-n-kaiser-polosukhin-i-2017-attention-is-all-you-need-advances-in-neural-information-processing-systems-p-pp-5998-6008-">##2. Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł. &amp; Polosukhin, I. (2017). Attention is all you need. Advances in Neural Information Processing Systems (p./pp. 5998--6008), .</h2>
+<ul>
+<li>Why do we need Transformers?</li>
+<li>Translation is autoregressive task where given an input sequence we must return an output sequence.</li>
+<li>RNNs are neural networks that roll out in discrete time steps and thus have been used in vec2seq, seq2vec, seq2seq tasks</li>
+<li>They suffer from a few major drawbacks: They are slow to train, Vanishing Gradients hence do not perform good for longer sentences.</li>
+<li>The LSTM block was introduced to solve the problem of vanishing gradients but they are even slower to train.</li>
+<li>The problem is their sequential nature that do not allow parallelisation</li>
+<li>The self-attention layers were added, with the idea that not all words are equally important for translation so only focus on some parts.</li>
+<li>The context for a good translation can be found way back in a sentence hence traditional RNNs/LSTSM fail*</li>
+<li>The attention function is a differentiable function that can be calculated given a query, K, and value as *
+$$
+\text { Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d<em>{k}}}\right) V
+$$
+The positional encoder used in the original paper
+$$
+\begin{aligned}
+P E</em>{(p o s, 2 i)} &amp;=\sin \left(p o s / 10000^{2 i / d<em>{\text {model }}}\right) \
+P E</em>{(\text {pos }, 2 i+1)} &amp;=\cos \left(p o s / 10000^{2 i / d_{\text {model }}}\right)
+\end{aligned}
+$$</li>
+<li>Because of their significant improvements they(transformers) have became the base for many other sequence prediction and NLP models. (BERT, GPT3)</li>
+<li>Baseline models from fairseq were used for subsequent tasks*</li>
+</ul>
+<h2 id="-3-malinin-a-gales-m-2020-uncertainty-estimation-in-autoregressive-structured-prediction-arxiv-preprint-arxiv-2002-07650-">##3.  Malinin, A., &amp; Gales, M. (2020). Uncertainty Estimation in Autoregressive Structured Prediction. arXiv preprint arXiv:2002.07650.</h2>
+<ul>
+<li>Their goal is to give unsupervised uncertainty estimates in autoregressive tasks at both token and sentence level.</li>
+<li>The authors claim that there are two types of uncertainties Knowledge and Data</li>
+<li>Knowledge uncertainty captures the uncertainty due to the lack of understanding of data by the model.</li>
+<li>Data uncertainty is the intrinsic uncertainty in the data</li>
+<li>The authors take a bayesian approach, they assume that model parameter $\mathbf{\theta}$ is a random variable with a prior $p(\mathbf{\theta})$</li>
+<li>The predictive Posterior given the data $p(\mathbf{\theta}| \mathcal{D})$ is intractable so we take $q(\mathbf{\theta}) \approx p(\mathbf{\theta}| \mathcal{D}) $</li>
+<li>Using entropy chain rules we can write total uncertainity = know. uncertainty + data uncertainty</li>
+<li>Taking inspiration from this they use mutual information between y and $\theta$ to quantify ensemble diversity.</li>
+<li>Next they use EPKL and reverse mutual information to measure model diversity/uncertainty</li>
+<li>They explore a few properties of the three measures give monte carlo approximates to calculate them.</li>
+<li>They also explore how different ways of ensemble prediction effects uncertainty estimates.</li>
+</ul>
+<h2 id="4-wang-y-wu-l-xia-y-qin-t-zhai-c-liu-t-y-2020-transductive-ensemble-learning-for-neural-machine-translation-proceedings-of-the-aaai-conference-on-artificial-intelligence-34-04-6291-6298-">4. Wang, Y., Wu, L., Xia, Y., Qin, T., Zhai, C., &amp; Liu, T.-Y. (2020). Transductive Ensemble Learning for Neural Machine Translation. Proceedings of the AAAI Conference on Artificial Intelligence, 34(04), 6291-6298.</h2>
+<hr>
+<ul>
+<li>While ensemble learning in effective in many scenarios it has some limitations in some cases.</li>
+<li>When there are strong single models, ensemble based techinques do not give much improvement</li>
+<li>Also there is a diminishing effect as no of models increase.</li>
+<li>The authors thus propose a technique based on transductive learning to address these issues. They claim that there idea performs better based on other ensemble techniques like Knowledge distillation.</li>
+<li>The key idea is to generate a synthetic dataset from the validation and test set and generating their translation from ensemble then fine tuning any single model on this dataset so as to minimise a loss function. Then choose the best model that performs well on the validation set.
+$$
+y^{(t)}=\underset{w \in \mathcal{V}<em>{t}}{\operatorname{argmax}} \frac{1}{M} \sum</em>{m=1}^{M} \log P\left(w \mid y^{(&lt;t)}, x ; f<em>{m}\right)
+$$
+The two ways to combine models are given by:
+$$
+y=\underset{y^{\prime} \in \mathcal{T}(x)}{\operatorname{argmax}} \frac{1}{M} \sum</em>{m=1}^{M} \log P\left(y^{\prime} \mid x ; f_{m}\right)
+$$
+They represent the token level averaging and sentence level</li>
+<li>Now the function to minimise is given by
+$$
+\min \sum<em>{(x, y) \in \mathcal{D}</em>{v} \cup \mathcal{D}<em>{t}}-\log P\left(y \mid x ; f</em>{0}\right)
+$$</li>
+</ul>
+<h1 id="-misc-details-"><em> Misc details</em></h1>
+<p><em>After using a moses tokeniser, BPE codes must be learnt. This is to learn subword tokens to enrich our vocabulary.
+</em>For making an inference, first the tokenised sentences must be converted into fairseq binary format for faster processing<em>
+</em>For choosing the best hypothesis from such a large space of all possible sentences of finite length we must use beam search*</p>
+<h2 id="-in-beam-search-we-keep-track-of-certain-number-of-hypothesis-and-then-the-best-possible-"><em>In beam search we keep track of certain number of hypothesis and then the best possible </em></h2>
+<h1 id="-revised-plan-"><em>Revised Plan</em></h1>
+<ul>
+<li>By midway we were able to draw inference from the baseline model and the ensemble of models</li>
+<li>The implementation of baseline uncertainty estimates provided by the authors ran into a lot of errors. Attempts were made to correct them but unable to pinpoint the error</li>
+<li>So instead tried to write our own implementation but little success</li>
+<li>Next section we focus on how can we go about improving robustness and uncertainty estimates (tested on synthetically created dataset)</li>
+</ul>
+<h1 id="uncertainty-robustness-in-deep-learning">Uncertainty/Robustness in deep Learning</h1>
+<ul>
+<li>We can motivate the decomposition of data and knowledge uncertainty on a linear model. We sample from two different regions with different variance.</li>
+<li>Data uncertainty is high were variance is high while knowledge uncertainty is high in the region where there are fewer training examples.</li>
+<li>We train models with/without dropout during inference to see how they perform (synthetic dataset) and also compare various dropout rates.</li>
+<li>We train a model that has seen some examples from valid set and give uncertainty estimates using the difference in prediction from a base model.</li>
+<li>We use the $\chi^2$ distance for comparing the two distributions</li>
+</ul>
+<p>Results/Code:
+What has been done so far:</p>
 <ol>
-<li><p><strong>Malinin, A., Band, N., Ganshin, Chesnokov, G., Gal, Gales, M., Noskov, A., Ploskonosov, A., Prokhorenkova, L., Provilkov, I., Raina, V., Raina, V., Roginskiy, D., Shmatova, M., Tigar, P., &amp; Yangel, B. (2021). Shifts: A Dataset of Real Distributional Shift Across Multiple Large-Scale Tasks. arXiv preprint arXiv:2107.07455.</strong>
-This paper describes the task and the dataset that must used for training and validation. It is generally assumed that the training data and deployment data come from identical distribution, but for many tasks and datasets in the wild this may not be the case and the deployment data is heavily shifted or out of domain. We want our datasets to be robust to such shifts and also to give reliable uncertainty estimates on its predictions. This estimates must be predictable and reliable so that we know when to trust the model. The task we will be focusing on is Neural Machine Translation(NMT). This is a structured prediction task. For the in-Domain dataset we use WMT’20 English-Russian corpus,English-Russian Newstest’19, GlobalVoices News service which will be used for training, development, and evaluation respectively. They contain roughly 70 million, 2000 and 3000 sentences respectively. For shifted dataset we use, WMT’19 MTNT Reddit and Shifts reddit prepared for this challenge. They total about 3,500 sentences that will be used for development and evaluation. Since this dataset is crawled from reddit. Assessment of models must account for both its performance on shifted dataset and also reliability of its uncertainty measures. For performance on evaluation set we can use standard metrics like BLEU and GleU. For uncertainty estimates we can assess its ability to distinguish in-domain and out-of-domain input using area under receiver operator curve or precision recall (AUROC/ AUPR) but this is not much useful models may be robust some examples in the distributed dataset and give low uncertainty for these examples. To jointly assess performance and uncertainty area under error retention curve is suggested. For the baseline models 3-transformer big models are trained using fairseq. These models are currently best for many NLP tasks and use self attention based RNNs. For uncertainty estimates they use a method described in a referenced paper which we will discuss below.</p>
-</li>
-<li><p><strong>Malinin, A., &amp; Gales, M. (2020). Uncertainty Estimation in Autoregressive Structured Prediction. arXiv preprint arXiv:2002.07650.</strong>
-This paper discusses predictive uncertainty estimates in Autoregressive Structured Prediction task.
-Since Machine Translation is autoregressive in nature i.e. the probability of the next output word is dependent on the previous occurring words, this paper is of relevance to us. The authors decompose total uncertainty into one of data uncertainty and knowledge uncertainty. Data uncertainty is the intrinsic uncertainty associated with the data while the knowledge uncertainty is the uncertainty associated with the model due to its inability to understand the data. We are particularly interested in making knowledge uncertainty estimates. For this the authors propose using an ensemble of models trained with different initialisations. Next a predictive posterior probability is calculated by taking expectation over all the ensembles. Next the entropy for this posterior is calculated and written in terms of data and knowledge uncertainty. Apart from this two other measures expected pairwise KL-divergence and reverse mutual information are introduced to capture model diversity and their properties explored. Since these measures become intractable very soon as vocabulary sizes increase methods for their approximations are also discussed.</p>
-</li>
+<li>Baseline transformer - inference generated for valid and test set which gave log likelihood probabilities for different tokens</li>
+<li>Baseline uncertainty - author implementation not working, own implementation  but will require more time as some details were overlooked on initial reading.</li>
+<li>Making interactive translations and visualising attention vectors were implemented.</li>
+<li>Varying dropout rates and method for uncertainty estimates explored on synthetic dataset.
+The Colab file will be updated with the codes/results and the notebook used for learning pytorch and fairseq on this same repository after trying to fix the errors(which can be fixed) before 19th.</li>
 </ol>
-<h1 id="progress">Progress</h1>
-<p>The training dataset turned out to be very big (around 40gb), this made working locally difficult. So the data was mounted to Drive and  Google Colab was used to process it. Even though scripts to train the baseline transformer model were provided preprocessing them turned to be time taking. The data had to be broken into subwords tokens and apply byte pair encoding for it to be in the correct format. Beam search was used to make inference.</p>
-</body>
-</html>
+</body></html>
